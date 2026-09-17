@@ -1,0 +1,15 @@
+2026-09-10 11:50:34 [INFO] Run directory created: runs/2026-09-10_115034
+2026-09-10 11:50:34 [INFO] Run directory layout initialized
+2026-09-10 11:50:34 [INFO] Staged CIF for crystal: inputs/crystal/X1.cif
+2026-09-10 11:50:34 [INFO] Using user-provided K_POINTS grid: 3 3 2 0 0 0
+2026-09-10 11:50:35 [INFO] Generated QE input via cif2cell: inputs/crystal/X1.scf.in
+2026-09-10 11:50:36 [INFO] Pseudopotential cleanup complete: map={'N': 'N.pbe.theos.UPF', 'C': 'C_pbe_v1.2.uspp.F.UPF', 'O': 'O_pbe_v1.2.uspp.F.UPF', 'F': 'f_pbe_v1.4.uspp.F.UPF', 'H': 'H.pbe-rrkjus_psl.0.1.UPF'} sources={'N': 'auto', 'C': 'auto', 'O': 'auto', 'F': 'auto', 'H': 'auto'}
+2026-09-10 11:50:36 [INFO] Generated crystal SLURM script: jobs/crystal/X1.scf.slurm
+2026-09-10 11:50:36 [ERROR] sbatch submission failed:
+CMD: sbatch X1.scf.slurm
+STDOUT:
+
+STDERR:
+sbatch: error: Batch job submission failed: Invalid qos specification
+
+2026-09-10 11:50:36 [INFO] Workflow batch finished.

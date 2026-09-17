@@ -1,0 +1,34 @@
+{
+  "cif": "/srv/.voila_uploads/X1.cif",
+  "calc_type": "scf",
+  "status": "initialized",
+  "tasks": {
+    "crystal": {
+      "status": "job_script_generated",
+      "staged_cif": "inputs/crystal/X1.cif",
+      "kpoints": "3 3 2 0 0 0",
+      "qe_input": "inputs/crystal/X1.scf.in",
+      "pp_cleanup_done": true,
+      "pseudo_dir": "/pp_lib",
+      "pp_map_used": {
+        "H": "H.pbe-rrkjus_psl.0.1.UPF",
+        "N": "N.pbe.theos.UPF",
+        "C": "C_pbe_v1.2.uspp.F.UPF",
+        "F": "f_pbe_v1.4.uspp.F.UPF",
+        "O": "O_pbe_v1.2.uspp.F.UPF"
+      },
+      "pp_sources": {
+        "H": "auto",
+        "N": "auto",
+        "C": "auto",
+        "F": "auto",
+        "O": "auto"
+      },
+      "job_script": "jobs/crystal/X1.scf.slurm",
+      "job_script_generated": true
+    },
+    "monomer": {
+      "status": "pending"
+    }
+  }
+}
