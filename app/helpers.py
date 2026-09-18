@@ -172,7 +172,7 @@ def build_app_style() -> str:
    own CSS keys its font-size off these, so without this override every
    widget label/button/input renders smaller than the app was designed at. */
 :root { --jp-ui-font-size1: 14px !important; --jp-content-font-size1: 15px !important; }
-body { background:#f4f6f9; font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size:14px; }
+body { background:#f4f6f9; font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size:14px; overflow-x:hidden; }
 
 /* generic widget polish (still used inside cards / accordions) */
 .widget-button { border-radius:6px; font-weight:600; min-height:34px; }
@@ -201,7 +201,7 @@ body { background:#f4f6f9; font-family:'Segoe UI', Roboto, 'Helvetica Neue', Ari
 }
 .widget-inline-hbox { width:100% !important; box-sizing:border-box !important; }
 .jp-OutputArea-output, .jp-RenderedHTMLCommon, .lm-Widget.jp-OutputArea-child {
-    overflow-x:visible !important; }
+    overflow-x:hidden !important; }
 /* ipywidgets containers carry a default 2px margin on every side; inside a
    percentage-width flex column that pushes the element past 100% of its
    slot and the rounded card border then clips it off. Zero that out and
@@ -210,7 +210,7 @@ body { background:#f4f6f9; font-family:'Segoe UI', Roboto, 'Helvetica Neue', Ari
     box-sizing:border-box !important; margin:0 !important; }
 
 /* ── app shell: sidebar + main content ─────────────────────────────────── */
-.advqm-shell { display:flex; align-items:stretch; gap:22px; margin-top:34px; }
+.advqm-shell { display:flex; align-items:stretch; gap:22px; margin-top:34px; overflow-x:hidden; }
 .advqm-sidebar { flex:0 0 220px; background:#eaf2fd; border:1px solid #dbe8fa; border-radius:12px; padding:14px 10px;
     display:flex; flex-direction:column; gap:3px;
     position:sticky; top:14px; align-self:flex-start;
@@ -277,15 +277,17 @@ body { background:#f4f6f9; font-family:'Segoe UI', Roboto, 'Helvetica Neue', Ari
 
 /* ── clickable runs row-list (Runs page) ───────────────────────────────── */
 .advqm-rowlist { padding:0 !important; overflow:hidden; }
-.advqm-rowlist-head { padding:12px 16px; font-size:1.05rem; font-weight:700; color:#667085;
-    text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid #e5e9f0;
+.advqm-rowlist-head { display:flex; align-items:center; box-sizing:border-box;
+    padding:12px 16px; font-size:1.4rem; font-weight:700; color:#667085;
+    letter-spacing:0.02em; border-bottom:1px solid #e5e9f0;
     background:#fafbfc; }
+.advqm-rowlist-head span { box-sizing:border-box; flex:0 1 auto; min-width:0;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-right:8px; }
 .advqm-rowlist-row.widget-hbox { padding:10px 16px !important; border-bottom:1px solid #f1f3f7 !important;
     align-items:center !important; font-size:0.95rem !important; }
 .advqm-rowlist-row.widget-hbox:hover { background:#fafbfc !important; }
+.advqm-rowlist-row.widget-hbox > * { box-sizing:border-box !important; min-width:0 !important; }
 .advqm-rowcell-cif span { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.advqm-rowlist-row .widget-button { min-height:28px !important; font-size:0.78rem !important;
-    padding:2px 10px !important; }
 
 /* ── run detail card ────────────────────────────────────────────────────── */
 .advqm-detail-energy-label { font-size:0.72rem; font-weight:700; color:#667085;

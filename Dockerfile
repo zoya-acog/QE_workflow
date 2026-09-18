@@ -36,7 +36,8 @@ RUN pip install --no-cache-dir \
         voila \
         ipywidgets \
         ipykernel \
-        pandas
+        pandas \
+        matplotlib
 
 RUN pip install --no-cache-dir cif2cell
 
